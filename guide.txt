@@ -1,0 +1,185 @@
+--------------------------------------------------------array methods---------------------------------------------------------------
+SORT ARRAY:
+sort(a,a+n);
+
+sort array in decreasing order:
+sort(arr, arr + n, greater<int>());
+
+reverse:
+reverse(s.begin(),s.end());
+--------------------------------------------------------vector methods---------------------------------------------------------------
+push:
+vec.push_back();
+pop:
+vec.pop_back();
+sort:
+sort(A.begin(),A.end()); 
+vector initialization using other sets, vectors, etc.:
+vector<int> v (s.begin(),s.end());
+
+--------------------------------------------------------string methods-------------------------------------------------------------
+#include <string>
+
+string length:
+s.length();
+concateate:
+s=s1+s2;
+convert to string:
+string s1=to_string(n);
+convert string to int:
+int c = stoi(s)
+
+find an element in string(returns a position):
+s.find(x);
+
+0-9: 48-57 ascii
+capitals: 65-90 ascii
+letters:97-122
+
+verify is upper with boolean:
+i.isupper()
+similarly:
+i.islower()
+i.isdigit()
+
+convert strings:
+to upper case:
+x = toupper(x);
+similarly:
+x = tolower(x);
+
+blank space:
+32(ascii)
+remove space:
+0(ascii)
+
+erase and end methods usage:
+S.erase(S.end()-1);
+reverse:
+reverse(s.begin(),s.end());
+sort:
+sort(s.begin(),s.end());
+
+
+---------------------------------------------------------set operations------------------------------------------------------------
+set iterator:-
+ set<int>::iterator itr=s.begin();
+	    for(itr=s.begin();itr!=s.end();itr++){
+	        cout<<*itr<<endl;
+	    }
+
+set initialize:-
+set<int> s;
+s{'a', 'b', 'c', 'd'};
+
+insert:
+s.insert(x);
+
+size:
+s.size()
+
+unordered set:
+unordered_set<string> s;
+
+clear all:
+s.clear();
+
+remove element:
+s.erase(arr[i]);
+
+converting a set s to a vector:
+set <int> s;
+vector <int> v(s.begin(),s.end());
+----------------------------------------------------other operations----------------------------------------------------------------
+absolute:
+abs(x);
+power:
+pow(x,y);
+swap:
+swap(x,y);
+gcd:
+__gcd(m, n)
+
+custom comparision function:
+for nodes:
+struct node{
+string name;
+int salary;
+}
+
+static bool comp(const node &a, const node &b){
+	    if(a.salary==b.salary){
+	        return a.name<b.name;
+	    }
+	    else{
+	        return a.salary<b.salary;
+	    }
+	}
+
+
+xor operation:
+
+xor method:
+a^b;
+
+odd ^ odd = even
+odd ^ even = odd
+even ^ odd = odd
+even ^ even = even
+
+-->distinct adjacent elements in an array:
+It is possible only when maximum frequency of the most repeating element is less than (n+1)/2
+
+----------------------------------------------------map operations---------------------------------------------------------------------
+initialize:
+map<int,int> m;
+
+create and access:
+for(int i=0; i<N; i++){
+            m[arr[i]]++;
+        }
+        for(auto x:m){
+            if(x.second==1) return x.first;
+        }
+
+unordered map:
+unordered_map<int,int> mp;
+usage:
+mp.find(x-arr2[i]) != mp.end()
+insert:
+mp.insert({x,1});
+accesing map elements:
+while (it != map.end())
+  {
+    std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+    ++it;
+  }
+
+----------------------------------------------------pair operations-----------------------------------------------------------
+initialize a pair:
+pair<int,int> p;
+-----------------------------------------------other things to remember---------------------------------------------------------------
+->number of diagonals of a polygon:
+n*(n-3)/2
+
+->A number n is said to be in Fibonacci series if either (5 * n * n – 4) or (5 * n * n + 4) is a perfect square.
+
+->INT_MIN,INT_MAX can be used to assign maimum and minimum possible int value to a number.
+
+->fibonacci:
+(5 * n * n – 4) or (5 * n * n + 4) is a perfect square then it is a fibonacci number.
+
+->total pairs in array whose XOR is odd will be equal to count of odd numbers multiplied by count of even numbers.
+
+
+-------------------------------------------------other functions--------------------------------------------------------------------
+	bool isperfect(long long int n){
+	    long long int y=sqrt(n);
+	    if(y*y==n){
+	        return 1;
+	    }
+	    return 0;
+	}
+
+
+

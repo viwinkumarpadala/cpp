@@ -572,4 +572,166 @@ int search(int arr[], int n, int k) {
 	    return -1;
 	}
 
+-->PAIR ARRAY PRODUCT SUM:
+
+int CountPairs (int arr[], int n)
+    {
+        //code here.
+        int count{0},twos{0};
+        for(int i{0};i<n;i++){
+            if(arr[i]!=0 and arr[i]!=1){
+                count++;
+                if(arr[i]==2){
+                    twos++;
+                }
+            }
+        }
+        return ((count*(count-1))/2)-((twos)*(twos-1)/2);
+    }
+
+-->COUNT PAIR SUM:
+
+ int countPairs(int arr1[], int arr2[],  int m, int n, int x) 
+    { 
+        //code here.
+        
+        unordered_set<int> s;
+        
+        for(int i{0};i<m;i++){
+            s.insert(arr1[i]);
+        }
+        
+        int ans{};
+        for(int j{0};j<n;j++){
+            if(s.find(x-arr2[j])!=s.end()){
+                ans++;
+            }
+        }
+        return ans;
+    } 
+
+-->FIRST COME FIRST SERVE:
+
+int firstElement(int arr[], int n, int k)
+    {
+        int count{};
+        unordered_map<int,int>m;
+        for(int i=0;i<n;i++){
+            if(m.find(arr[i])!=m.end()){
+                m[arr[i]]++;
+            }
+            else{
+                m.insert({arr[i],1});
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(m[arr[i]]==k){
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+
+-->ELEMENT BEFORE WHICH NO ELEMENT IS BIGGER:
+long long countElements(long long arr[], long long n) 
+    {
+        // Your code goes here
+        int max{-1};
+        int ans{0};
+        for(long long int i=0;i<n;i++){
+            if(arr[i]>max){
+                max=arr[i];
+                ans++;
+            }
+        }
+        return ans;
+    }
+-->MISSING NUMBER:
+
+int missingNumber(int A[], int N)
+{
+    // Your code goes here
+    int sum{};
+    for(int i{0};i<N-1;i++){
+        sum+=A[i];
+    }
+    return ((N*(N+1))/2)-sum;
+}
+
+-->STRANGE-SORT COPY:
+
+void strangeSort (int arr[], int n, int k)
+            {
+            	//code here.
+            	int temp{};
+            	temp=arr[k-1];
+            	
+            	arr[k-1]=INT_MIN;
+            	
+            	sort(arr,arr+n);
+            	arr[0]=temp;
+            	for(int i{0};i<k-1;i++){
+            	    swap(arr[i],arr[i+1]);
+            	}
+            }
+
+-->FRIENDLY ARRAY:
+
+int sumOfMinAbsDifferences(int arr[], int n)
+    {   
+        //code here.
+       int ans{};
+       sort(arr,arr+n);
+       
+       for(int i{1};i<n-1;i++){
+           if(abs(arr[i+1]-arr[i])<abs(arr[i-1]-arr[i])){
+               ans+=abs(arr[i+1]-arr[i]);
+            //   cout<<ans<<endl;
+           }
+           else{
+               ans+=abs(arr[i-1]-arr[i]);
+            //   cout<<ans<<endl;
+           }
+       }
+       
+       
+       if(abs(arr[1]-arr[0])<abs(arr[n-1]-arr[0])){
+           ans+=abs(arr[1]-arr[0]);
+        //   cout<<ans<<endl;
+       }
+       else{
+           ans+=abs(arr[n-1]-arr[0]);
+        //   cout<<ans<<endl;
+       }
+       
+       if(abs(arr[n-2]-arr[n-1])<abs(arr[n-1]-arr[0])){
+           ans+=abs(arr[n-2]-arr[n-1]);
+        //   cout<<ans<<endl;
+       }
+       else{
+           ans+=abs(arr[n-1]-arr[0]);
+        //   cout<<ans<<endl;
+       }
+       
+       return ans;
+    }
+
+-->BALANCED ARRAY:
+
+int minValueToBalance(int a[], int n)
+    {
+       //code here.
+       int l{0},r{0};
+       
+       for(int i{0};i<n/2;i++){
+           l+=a[i];
+        //   cout<<i<<endl;
+       }
+       for(int i{n-1};i>=n/2;i--){
+           r+=a[i];
+        //   cout<<i<<endl;
+       }
+       return abs(l-r);
+    }
+
 -->
